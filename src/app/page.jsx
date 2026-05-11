@@ -31,8 +31,6 @@ export default function Home() {
     // - useEffect 콜백 함수 내에서 사용
     // - fetchTodos 함수 호출
 
-    setTodos([]);
-
     const data = await fetchTodos();
     setTodos(data);
   };
