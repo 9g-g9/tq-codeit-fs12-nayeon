@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TodoList from "./_components/TodoList";
+import { fetchTodos } from "@/api/todos";
 
 const initialTodos = [
   {
@@ -29,7 +30,16 @@ export default function Home() {
     // - initialTodos 제거하고 초기값 빈 배열 [] 적용
     // - useEffect 콜백 함수 내에서 사용
     // - fetchTodos 함수 호출
+
+    setTodos([]);
+
+    const data = await fetchTodos();
+    setTodos(data);
   };
+
+  useEffect(() => {
+    loadTodos();
+  }, []);
 
   return (
     <div className="container mx-auto px-4 py-8">
