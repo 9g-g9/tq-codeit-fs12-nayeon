@@ -12,7 +12,7 @@
     },
     {
       "title": "json-server 데이터3",
-      "completed": false,
+      "completed": true,
       "id": 3
     }
   ]

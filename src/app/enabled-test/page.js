@@ -15,6 +15,7 @@ export default function EnabledTestPage() {
   } = useQuery({
     queryKey: ["todos", "enabled-test"],
     queryFn: fetchTodos,
+    enabled: isEnabled,
   });
 
   return (
@@ -34,6 +35,7 @@ export default function EnabledTestPage() {
                 ? "bg-red-500 hover:bg-red-600"
                 : "bg-green-500 hover:bg-green-600"
             }`}
+            onClick={() => setIsEnabled(!isEnabled)}
           >
             {isEnabled ? "비활성화 처리" : "활성화 처리"}
           </button>
